@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <div class="form-group">
+        <label class="control-label required" for="post_title">Стек</label>
+        <div class="row">
+            <div class="col-md-4">
+                <input type="text" id="stack_begin" required="required" class="form-control" value="">
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary stack_push">PUSH</button>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary stack_pop">POP</button>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="stack_finish" class="form-control" value="" disabled>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label required" for="post_title">Очередь</label>
+        <div class="row">
+            <div class="col-md-4">
+                <input type="text" id="queue_begin" required="required" class="form-control" value="">
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary queue_push">PUSH</button>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary queue_pop">POP</button>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="queue_finish" class="form-control" value="" disabled>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

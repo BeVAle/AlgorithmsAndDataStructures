@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <div class="form-group">
+        <label class="control-label required" for="post_title">Сортировка пузырьком</label>
+        <div class="row">
+            <div class="col-md-4">
+                <input type="text" id="bubbleSort_begin" required="required" class="form-control" value="">
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary bubbleSort">Sort</button>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="bubbleSort_finish" class="form-control" value="">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label required" for="post_title">Сортировка выбором</label>
+        <div class="row">
+            <div class="col-md-4">
+                <input type="text" id="selectSort_begin" required="required" class="form-control" value="">
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary selectSort">Sort</button>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="selectSort_finish" class="form-control" value="">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label required" for="post_title">Сортировка вставками</label>
+        <div class="row">
+            <div class="col-md-4">
+                <input type="text" id="insertSort_begin" required="required" class="form-control" value="">
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary insertSort">Sort</button>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="insertSort_finish" class="form-control" value="">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label required" for="post_title">Быстрая сортировка</label>
+        <div class="row">
+            <div class="col-md-4">
+                <input type="text" id="quickSort_begin" required="required" class="form-control" value="">
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary quickSort">Sort</button>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="quickSort_finish" class="form-control" value="">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label required" for="post_title">Radix сортировка</label>
+        <div class="row">
+            <div class="col-md-4">
+                <input type="text" id="radixSort_begin" required="required" class="form-control" value="">
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary radixSort">Sort</button>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="radixSort_finish" class="form-control" value="">
+            </div>
+        </div>
+    </div>
+{% endblock %}
