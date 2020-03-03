@@ -1,60 +1,85 @@
 {% extends 'base.html.twig' %}
 
 {% block main %}
-    <div class="form-group">
-        <label class="control-label required" for="post_title">Поиск рабина</label>
-        <div class="row">
-            <div class="col-md-4">
-                <input type="text" id="rabinSearch_text" required="required" class="form-control"placeholder="Какие данные">
-            </div>
-            <div class="col-md-2">
-                <input type="text" id="rabinSearch_pattern" required="required" class="form-control"  placeholder="Че ищем?">
-            </div>
-            <div class="col-md-3">
-                <button type="submit" class="btn btn-primary rabinSearch_search">Search</button>
-            </div>
-            <div class="col-md-3">
-                <input type="text" id="rabinSearch_finish" class="form-control" value="" disabled>
-            </div>
-        </div>
-    </div>
+{#    <div class="form-group">#}
+{#        <label class="control-label required" for="post_title">Поиск рабина</label>#}
+{#        <div class="row">#}
+{#            <div class="col-md-4">#}
+{#                <input type="text" id="rabinSearch_text" required="required" class="form-control"placeholder="Какие данные">#}
+{#            </div>#}
+{#            <div class="col-md-2">#}
+{#                <input type="text" id="rabinSearch_pattern" required="required" class="form-control"  placeholder="Че ищем?">#}
+{#            </div>#}
+{#            <div class="col-md-3">#}
+{#                <button type="submit" class="btn btn-primary rabinSearch_search">Search</button>#}
+{#            </div>#}
+{#            <div class="col-md-3">#}
+{#                <input type="text" id="rabinSearch_finish" class="form-control" value="" disabled>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
+{#    <div class="form-group">#}
+{#        <label class="control-label required" for="post_title">Поиск Бойера - Мура</label>#}
+{#        <div class="row">#}
+{#            <div class="col-md-4">#}
+{#                <input type="text" id="MooreSearch_text" required="required" class="form-control"placeholder="Какие данные">#}
+{#            </div>#}
+{#            <div class="col-md-2">#}
+{#                <input type="text" id="MooreSearch_pattern" required="required" class="form-control"  placeholder="Че ищем?">#}
+{#            </div>#}
+{#            <div class="col-md-3">#}
+{#                <button type="submit" class="btn btn-primary MooreSearch_search">Search</button>#}
+{#            </div>#}
+{#            <div class="col-md-3">#}
+{#                <input type="text" id="MooreSearch_finish" class="form-control" value="" disabled>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
+{#    <div class="form-group">#}
+{#        <label class="control-label required" for="post_title">Поиск Кнута–Морриса-Пратта</label>#}
+{#        <div class="row">#}
+{#            <div class="col-md-4">#}
+{#                <input type="text" id="KMPSearch_text" required="required" class="form-control"placeholder="Какие данные">#}
+{#            </div>#}
+{#            <div class="col-md-2">#}
+{#                <input type="text" id="KMPSearch_pattern" required="required" class="form-control"  placeholder="Че ищем?">#}
+{#            </div>#}
+{#            <div class="col-md-3">#}
+{#                <button type="submit" class="btn btn-primary KMPSearch_search">Search</button>#}
+{#            </div>#}
+{#            <div class="col-md-3">#}
+{#                <input type="text" id="KMPSearch_finish" class="form-control" value="" disabled>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
 
     <div class="form-group">
-        <label class="control-label required" for="post_title">Поиск Бойера - Мура</label>
+        <label class="control-label required" for="post_title">Поиск</label>
+        <form enctype="multipart/form-data" method="post" href="">
         <div class="row">
+            <div class="col-md-3">
+                <input type="file" name="file_search" required="required" class="form-control file_search">
+            </div>
             <div class="col-md-4">
-                <input type="text" id="MooreSearch_text" required="required" class="form-control"placeholder="Какие данные">
-            </div>
-            <div class="col-md-2">
-                <input type="text" id="MooreSearch_pattern" required="required" class="form-control"  placeholder="Че ищем?">
+                <input type="text" name="count_symbols" required="required" class="form-control count_symbols"  placeholder="сколько символов бьем?">
             </div>
             <div class="col-md-3">
-                <button type="submit" class="btn btn-primary MooreSearch_search">Search</button>
+                <input type="text" name="search" required="required" class="form-control search"  placeholder="Че ищем?">
             </div>
-            <div class="col-md-3">
-                <input type="text" id="MooreSearch_finish" class="form-control" value="" disabled>
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-primary start_search">Search</button>
             </div>
         </div>
+        </form>
     </div>
-
-    <div class="form-group">
-        <label class="control-label required" for="post_title">Поиск Кнута–Морриса-Пратта</label>
-        <div class="row">
-            <div class="col-md-4">
-                <input type="text" id="KMPSearch_text" required="required" class="form-control"placeholder="Какие данные">
-            </div>
-            <div class="col-md-2">
-                <input type="text" id="KMPSearch_pattern" required="required" class="form-control"  placeholder="Че ищем?">
-            </div>
-            <div class="col-md-3">
-                <button type="submit" class="btn btn-primary KMPSearch_search">Search</button>
-            </div>
-            <div class="col-md-3">
-                <input type="text" id="KMPSearch_finish" class="form-control" value="" disabled>
-            </div>
-        </div>
+{#    <div class="form-group">#}
+        <label class="control-label required" for="post_title">Ответ</label>
+    <div >
+        <textarea  class="form-control finish_search" disabled>{{ text }}</textarea>
+{#    </div>#}
     </div>
-
-
 
 {% endblock %}

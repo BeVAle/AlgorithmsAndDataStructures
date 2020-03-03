@@ -14,14 +14,34 @@ use Symfony\Component\Routing\Annotation\Route;
 class SearchController extends AbstractController
 {
     /**
-     * @Route("/search",  methods="GET", name="searh_index")
+     * @Route("/search",  methods={"GET","POST"}, name="searh_index")
      * @param Request $request
      * @param PostRepository $posts
      * @return Response
      */
     public function index(Request $request, PostRepository $posts): Response
     {
-        return $this->render('search/search.twig');
+        $text = "";
+        if ($request->request->all()) {
+            $uploadDir = __DIR__ . "/../../var/uploads/";
+            $uploadFile = $uploadDir . basename($_FILES['file_search']['name']);
+            move_uploaded_file($_FILES['file_search']['tmp_name'], $uploadFile);
+
+            $filename = $uploadFile;
+            $handle = fopen($filename, "r");
+            $contents = fread($handle, filesize($filename));
+            fclose($handle);
+            $search = new Search();
+
+            $countSymbols = $_POST['count_symbols'];
+            $step = filesize($filename) / $countSymbols;
+            for ($i = 0; $i < $step; $i++) {
+                $subStr = substr($contents, ($countSymbols * $i), $countSymbols);
+                $searchedIndex = $search->KMPSearch($_POST['search'], $subStr);
+                $text .= "В строке  {$i}  ".trim($subStr).": " . $searchedIndex . PHP_EOL;
+            }
+        }
+        return $this->render('search/search.twig', ['text' => $text]);
     }
 
 
